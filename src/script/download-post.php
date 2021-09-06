@@ -1,6 +1,10 @@
 <?php
-$POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
-$COMMENTS_URL = 'https://jsonplaceholder.typicode.com/comments';
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '../../');
+$dotenv->load();
 
 function get_json_from_url($url)
 {
@@ -12,6 +16,7 @@ function get_json_from_url($url)
     curl_close($ch);
     return json_decode($page);
 }
+
 
 
 
