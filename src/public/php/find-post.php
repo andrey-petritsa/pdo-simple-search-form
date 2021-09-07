@@ -1,4 +1,8 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../../vendor/autoload.php';
+
+use App\Components\Mysql\MysqlConnectionSingle;
+
 header('Content-type: application/json');
 $MIN_COMMENT_CONTAINED_TEXT_LENGHT = 3;
 $_POST = json_decode(file_get_contents("php://input"), true);
@@ -9,3 +13,4 @@ if (strlen($comment_contained_text) < $MIN_COMMENT_CONTAINED_TEXT_LENGHT) {
     return;
 }
 
+$mysql_cursor = MysqlConnectionSingle::getInstance();
