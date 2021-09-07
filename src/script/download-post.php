@@ -17,7 +17,7 @@ function get_json_from_url($url)
     return json_decode($page);
 }
 
-$conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME'], $_ENV['DB_PORT']);
+$conn = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME'], $_ENV['DB_PORT']);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
