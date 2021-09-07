@@ -24,7 +24,7 @@ if ($mysql_cursor->connect_error) {
     die("Connection failed: " . $mysql_cursor->connect_error);
 }
 
-$prepared_query_insert_post = $mysql_cursor->prepare("INSERT INTO Posts(postId, userId, title, body) VALUES (?, ?, ?, ?)");
+$prepared_query_insert_post = $mysql_cursor->prepare("INSERT IGNORE INTO Posts(postId, userId, title, body) VALUES (?, ?, ?, ?)");
 $posts = get_json_from_url($_ENV['POSTS_URL']);
 foreach ($posts as $post) {
     $prepared_query_insert_post->bind_param('iiss', $post->id, $post->userId, $post->title, $post->body);
