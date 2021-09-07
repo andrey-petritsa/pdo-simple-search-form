@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    margin-top: 350px;
+}
+
+.search-form__input {
+    min-width: 500px;
+    height: 40px;
+    padding: 0 0 0 20px;
+    font-size: 18px;
+    border-right: none;
+}
+
+.search-form__submit {
+    width: 10em;
+    height: 44px;
+    padding: 0;
+    border-left: none;
+}
+
+.search-form__input:focus {
+    outline: none;
+}
+
