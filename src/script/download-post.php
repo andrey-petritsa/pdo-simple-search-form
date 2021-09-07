@@ -31,6 +31,13 @@ foreach ($posts as $post) {
     $prepared_query_insert_post->execute();
 }
 
+$prepared_query_insert_comments = $mysql_cursor->prepare("INSERT IGNORE INTO Comments(commentId, postId, name, email, body) VALUES (?, ?, ?, ?, ?)");
+$comments = get_json_from_url($_ENV['COMMENTS_URL']);
+foreach ($comments as $comment) {
+    $prepared_query_insert_comments->bind_param('iisss', $comment->id, $comment->postId, $comment->name, $comment->email, $comment->body);
+    $prepared_query_insert_comments->execute();
+}
+
 $mysql_cursor->close();
 
 
