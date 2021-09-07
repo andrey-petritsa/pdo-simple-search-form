@@ -17,6 +17,7 @@ CREATE TABLE Comments
     name varchar(100),
     email varchar(255),
     body varchar(255),
+    PRIMARY KEY (commentId),
     FOREIGN KEY (postId)
         REFERENCES Posts(postId)
         ON DELETE CASCADE
