@@ -10,8 +10,12 @@ body {
 }
 
 .search-form {
-    display: flex;
     margin-top: 350px;
+}
+
+.search-form__inputs {
+    display: flex;
+    justify-content: center;
 }
 
 .search-form__input {
@@ -32,4 +36,9 @@ body {
 .search-form__input:focus {
     outline: none;
 }
+
+.search-form__alert {
+    flex-basis: 100%
+}
+
 
