@@ -6,6 +6,7 @@ let form_posts = document.querySelector('.search-form__founded')
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault()
+    form_posts.innerHTML = ''
 
     if (is_request_valid()) {
         let json_response = await send_request_find_posts();
