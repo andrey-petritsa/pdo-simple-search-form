@@ -17,12 +17,10 @@ form.addEventListener('submit', async (event) => {
                 if (posts.length === 0) {
                     form_alert.innerHTML = 'Не найдено постов с указанным комментарием'
                 } else {
-                    posts.forEach((post) => {
-                        let post_section = generate_post_section(post)
+                    for (var key in posts) {
+                        let post_section = generate_post_section(posts[key])
                         form_posts.appendChild(post_section)
-                    })
-
-
+                    }
                 }
             }
             if (json['message']) {
@@ -42,14 +40,21 @@ function generate_post_section(post) {
 
     let post_title = document.createElement('h3')
     post_title.className = 'search-form__post-title';
-    post_title.innerHTML = post['title']
+    post_title.innerHTML = post['postTitle']
 
-    let post_body = document.createElement('div')
-    post_body.className = 'search-form__post-text'
-    post_body.innerHTML = post['body']
+    let post_comments = document.createElement('div')
+    post_comments.className = 'search-form__post-comments'
+
+    post['comments'].forEach((comment) => {
+        let post_comment = document.createElement('div');
+        post_comment.className = 'search-form__post-comment'
+        post_comment.innerHTML = comment
+
+        post_comments.appendChild(post_comment)
+    })
 
     post_section.appendChild(post_title)
-    post_section.appendChild(post_body)
+    post_section.appendChild(post_comments)
     return post_section
 }
 
