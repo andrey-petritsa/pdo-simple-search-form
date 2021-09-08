@@ -11,6 +11,7 @@ body {
 
 .search-form {
     margin-top: 350px;
+    max-width: 1200px;
 }
 
 .search-form__inputs {
@@ -39,6 +40,11 @@ body {
 
 .search-form__alert {
     flex-basis: 100%
+}
+
+.search-form__post {
+    border: 1px solid black;
+    margin-top: 10px;
 }
 
 

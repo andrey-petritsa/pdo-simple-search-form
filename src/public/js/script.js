@@ -38,7 +38,7 @@ form.addEventListener('submit', async (event) => {
 
 function generate_post_section(post) {
     let post_section = document.createElement('div')
-    post_section.className = `search-form__post_post-id-${post['postId']}`
+    post_section.className = `search-form__post search-form__post_post-id-${post['postId']}`
 
     let post_title = document.createElement('h3')
     post_title.className = 'search-form__post-title';
