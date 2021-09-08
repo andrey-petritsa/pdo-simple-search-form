@@ -29,7 +29,7 @@ function get_posts_with_contained_commentary($commentary_part)
 {
     $mysql_cursor = MysqlConnectionSingle::getInstance();
 
-    $prepared_query_find_post = $mysql_cursor->prepare("SELECT p.* FROM Comments c INNER JOIN Posts p on c.postId = p.postId WHERE c.body LIKE ?");
+    $prepared_query_find_post = $mysql_cursor->prepare("SELECT DISTINCT p.* FROM Comments c INNER JOIN Posts p on c.postId = p.postId WHERE c.body LIKE ?");
     $commentary_search_template = '%' . $commentary_part . '%';
     $prepared_query_find_post->bind_param('s', $commentary_search_template);
     $prepared_query_find_post->execute();
