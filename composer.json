@@ -3,7 +3,8 @@
     "vlucas/phpdotenv": "^5.3",
     "ext-curl": "*",
     "ext-json": "*",
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "ext-pdo": "*"
   },
   "autoload": {
     "psr-4": {
