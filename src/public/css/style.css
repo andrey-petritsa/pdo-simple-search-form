@@ -44,7 +44,19 @@ body {
 
 .search-form__post {
     border: 1px solid black;
-    margin-top: 10px;
+    margin-top: 100px;
+}
+
+.search-form__post-comment {
+    padding: 10px;
+}
+
+.search-form__post-comment:before {
+    content: "* ";
+}
+
+.search-form__post-title {
+    text-align: center;
 }
 
 
