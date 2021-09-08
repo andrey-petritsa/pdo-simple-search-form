@@ -18,7 +18,7 @@ class MysqlConnectionSingle
             self::getAppEnvironmentVariables();
             self::$mysql_cursor = new \mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME'], $_ENV['DB_PORT']);
             if (self::$mysql_cursor->connect_error) {
-                die("Connection failed: " . self::$mysql_cursor->connect_error);
+                die(json_encode(['message' => self::$mysql_cursor->connect_error]));
             }
         }
         return self::$mysql_cursor;
@@ -26,7 +26,7 @@ class MysqlConnectionSingle
 
     private static function getAppEnvironmentVariables()
     {
-        $dotenv = Dotenv::createImmutable(__DIR__);
+        $dotenv = Dotenv::createImmutable(__DIR__ . '/../../' );
         $dotenv->load();
     }
 }
