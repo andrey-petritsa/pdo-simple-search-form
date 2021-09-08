@@ -18,6 +18,7 @@ class MysqlConnectionSingle
             self::getAppEnvironmentVariables();
             self::$mysql_cursor = new \mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME'], $_ENV['DB_PORT']);
             if (self::$mysql_cursor->connect_error) {
+                header('Content-Type: application/json; charset=utf-8');
                 die(json_encode(['message' => self::$mysql_cursor->connect_error]));
             }
         }
