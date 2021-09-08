@@ -51,8 +51,6 @@ function get_posts_with_contained_commentary($commentary_part)
     }
     $mysql_cursor->close();
     return $founded_posts_with_comments;
-
 }
-
 
 main();
