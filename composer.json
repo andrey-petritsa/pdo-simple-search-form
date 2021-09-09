@@ -1,15 +1,18 @@
 {
-  "require": {
-    "vlucas/phpdotenv": "^5.3",
-    "ext-curl": "*",
-    "ext-json": "*",
-    "ext-mysqli": "*",
-    "ext-pdo": "*",
-    "codeception/codeception": "^4.1"
-  },
-  "autoload": {
-    "psr-4": {
-      "App\\": "src/"
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mysqli": "*",
+        "ext-pdo": "*",
+        "codeception/codeception": "^4.1",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0",
+        "codeception/module-webdriver": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
     }
-  }
 }
